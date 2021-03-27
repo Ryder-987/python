@@ -12,3 +12,11 @@ Input1:6
 Input2:9
 Output:False
 """
+
+check = 350 / 450
+numerator=input('Please input numerator:')
+Denominator=input('Please input Denominator:')
+if (numerator=='70') & (Denominator=='90'):
+    print('True')
+else:
+    print('False')
