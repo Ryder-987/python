@@ -5,7 +5,7 @@
 
 e.g.
 input:20
-output: 
+output:
 3
 6
 7
@@ -15,3 +15,10 @@ output:
 15
 18
 """
+
+num = int(input())
+for x in range(1, num+1):
+    if( x % 3 == 0):
+        print(x)
+    if( x % 7 == 0):
+        print(x)
