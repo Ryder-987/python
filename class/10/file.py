@@ -1,4 +1,4 @@
-sts = [1, 10, 1000, 0, 0]
+sts = [1, 10, 0, 10000, 0]
 
 path = 'output.txt'
 f = open(path, 'w')

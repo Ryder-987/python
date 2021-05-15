@@ -52,7 +52,7 @@ def fighting(life, magic, money):
             attack = random.randint(50, 100)
             money -= 100000
         else:
-            print('使出一般攻擊、魔力點數未滿 或 錢不夠使用武士刀!')
+            print('使出一般攻擊、魔力點數未滿 或 錢不夠使用武士刀(k)!')
             attack = random.randint(1, 3)
         print("You make damage %d" % attack)
         monster_life -= attack
