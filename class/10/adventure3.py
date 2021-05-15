@@ -115,7 +115,8 @@ def store (life, magic, money, katana):
 
 
 #main loop
-sts=[1, 10, 0, 10000, 0] #是否生存/生命/錢/武士刀
+#sts=[1, 10, 0, 10000, 0] #是否生存/生命/錢/武士刀
+sts = read_file()
 while True:
     rev=input("Do you want 'c' continue 's'go to the store 'q' quit the game")
     if ( rev == "c" ):
