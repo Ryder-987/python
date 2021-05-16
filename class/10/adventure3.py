@@ -4,7 +4,7 @@
 新增武器:武器可以增加一般攻擊力
 新增防具:防具提供，防護點數，受到攻擊先扣防護點數，防護點數不夠才扣血量
 '''
-
+from PIL import Image
 import time
 import random
 
@@ -35,7 +35,7 @@ def update_money(money):
   print("Your Get Money = %d Your Money =%d" % (get_money, new_money))
   return new_money
 
-def fighting(life, magic, money):
+def fighting(life, magic, money, katana):
     status= [0, 0, 0, 0, 0]
     up_life = life
     up_magic = magic
@@ -48,9 +48,12 @@ def fighting(life, magic, money):
         if( act == 'm' and up_magic > 1):
             attack = random.randint(4, 10)
             up_magic -= 1
-        elif( act == 'k' and money > 100000):
+        elif( act == 'k' and katana == 1):
+            filename = 'price.jpg'
+            img = Image.open(filename)
+            img.show()
             attack = random.randint(50, 100)
-            money -= 100000
+            katana -= 1
         else:
             print('使出一般攻擊、魔力點數未滿 或 錢不夠使用武士刀(k)!')
             attack = random.randint(1, 3)
@@ -89,11 +92,11 @@ def store (life, magic, money, katana):
         if (act == 'q'):
             print('88')
             break
-        elif(act == 'k' and money >= 100000):
+        elif(act == 'k' and money >= 10000):
             katana += 1
-            money -= 100000
+            money -= 10000
             print(' katana= %d Money = %d' % (katana, money))
-        elif(money < 100) or (act == 'k' and money <= 100000):
+        elif(money < 100) or (act == 'k' and money <= 10000):
             print('Money is not enough , quit store')
             break
         elif(act == 'l'):
@@ -126,7 +129,7 @@ while True:
         if ( gen_event == 2 ):
             sts[3] = update_money(sts[3])
         if ( gen_event == 3 ):
-            sts = fighting(sts[1], sts[2], sts[3])
+            sts = fighting(sts[1], sts[2], sts[3], sts[4])
             if( sts[0] == 0 ):
                 print("Game Over")
                 break
